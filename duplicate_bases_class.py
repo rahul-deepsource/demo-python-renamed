@@ -14,6 +14,7 @@ class BaseOne:
 class AnotherChild(Base, BaseOne, Base, BaseOne):
     pass
 
+
 class Child(Base, BaseOne):
     """Some Child class"""
 
