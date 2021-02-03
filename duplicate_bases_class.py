@@ -11,6 +11,9 @@ class BaseOne:
         self.base_one = 2
 
 
+class AnotherChild(Base, BaseOne, Base, BaseOne):
+    pass
+
 class Child(Base, BaseOne):
     """Some Child class"""
 
