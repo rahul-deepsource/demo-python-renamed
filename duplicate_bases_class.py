@@ -11,7 +11,7 @@ class BaseOne:
         self.base_one = 2
 
 
-class AnotherChild(Base, BaseOne, Base, BaseOne):
+class AnotherChild(Base, BaseOne):
     pass
 
 
