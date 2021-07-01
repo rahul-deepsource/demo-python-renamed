@@ -1,5 +1,4 @@
 import random
-import pdb
 import sys as sys
 import os
 import subprocess
@@ -46,7 +45,6 @@ class RandomNumberGenerator:
 def main(options: dict = None) -> str:
     if options is None:
         options = {}
-    pdb.set_trace()
     if "run" in options:
         value = options["run"]
     else:
