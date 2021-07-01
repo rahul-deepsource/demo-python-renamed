@@ -1,5 +1,4 @@
 import random
-import pdb
 import sys as sys
 import os
 import subprocess
@@ -35,14 +34,17 @@ class RandomNumberGenerator:
     def limits(self):
         return self.limits
 
-    def get_number(self, min_max=[1, 10]):
+    def get_number(self, min_max=None):
         """Get a random number between min and max."""
+        if min_max is None:
+            min_max = [1, 10]
         assert all([isinstance(i, int) for i in min_max])
         return random.randint(*min_max)
 
 
-def main(options: dict = {}) -> str:
-    pdb.set_trace()
+def main(options: dict = None) -> str:
+    if options is None:
+        options = {}
     if "run" in options:
         value = options["run"]
     else:
@@ -60,7 +62,9 @@ def main(options: dict = {}) -> str:
     f.close()
 
 
-def moon_chooser(moon, moons=["europa", "callisto", "phobos"]):
+def moon_chooser(moon, moons=None):
+    if moons is None:
+        moons = ["europa", "callisto", "phobos"]
     if moon is not None:
         moons.append(moon)
 
