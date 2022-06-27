@@ -32,17 +32,12 @@ jobs:
         coverage lcov
         ls -lah
 
+    - name: Wait for 30s (The check should be created at this point)
+      uses: juliangruber/sleep-action@v1
+      with:
+        time: 30s
+
     - name: Report test coverage to DeepSource
       run: |
         curl https://deepsource.io/cli | sh
         ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
-
-    - name: Sleep for 2s
-      uses: juliangruber/sleep-action@v1
-      with:
-        time: 2s
-
-    - name: Report coverage reports for 'Go' 👹
-      run: |
-        curl https://deepsource.io/cli | sh
-        ./bin/deepsource report --analyzer test-coverage --key go --value-file ./coverage.lcov
