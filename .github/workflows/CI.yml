@@ -41,3 +41,13 @@ jobs:
       run: |
         curl https://deepsource.io/cli | sh
         ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
+
+    - name: Wait for 5s (The check should be created at this point)
+      uses: juliangruber/sleep-action@v1
+      with:
+        time: 5s
+
+    - name: Report test coverage for DeepSource Go
+      run: |
+        curl https://deepsource.io/cli | sh
+        ./bin/deepsource report --analyzer test-coverage --key go --value-file ./coverage.lcov
