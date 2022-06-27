@@ -37,10 +37,10 @@ jobs:
         curl https://deepsource.io/cli | sh
         ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
 
-    - name: Sleep for 20s
+    - name: Sleep for 2s
       uses: juliangruber/sleep-action@v1
       with:
-        time: 20s
+        time: 2s
 
     - name: Report coverage reports for 'Go' 👹
       run: |
